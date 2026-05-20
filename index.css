@@ -130,14 +130,12 @@ body.no-scroll {
   animation: titleGrow 1s ease-out 3s forwards, titleShake 0.2s ease-in-out 2s infinite alternate;
 }
 
-/* 3秒后放大到目标尺寸 */
 @keyframes titleGrow {
   to {
     font-size: clamp(80px, 3.5vw, 100px);
   }
 }
 
-/* 放大完成后持续轻微颤抖 */
 @keyframes titleShake {
   0% { transform: translateX(-3px) rotate(-1deg); }
   100% { transform: translateX(3px) rotate(1deg); }
