@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>week 4</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="week4.css">
+</head>
+
+<body>
+    <div class="fixed-buttons">
+       <button class="pixel-btn left-btn" onclick="history.back()">
+        GO BACK
+       </button>
+       <button class="pixel-btn right-btn" onclick="window.location.href='week5.html'">
+        EXPLORE WEEK 5
+       </button>
+    </div>
+
+    <header>
+        <h1>WEEK 4</h1>
+        <h2><span class="highlight">------INTRO TO p5.js-------</span></h2>
+    </header>
+
+    <div class="week4_container">
+
+        <div class="week4_content">
+            <p> PRE-CLASS HUNT 'N' GATHER </p>
+            <img src="week4_huntngather.GIF" alt="PRE-CLASS HUNT 'N' GATHER">
+            <span class="view-tip">View reflection</span>
+            <div class="full-desc">
+                I found this creative coding work through this week’s Hunt ‘n’ Gather. This p5.js project by Yutang Mu, simulates the pain and anxiety caused by technological determinism. What I found especially interesting was how the background buzzing sound, the clicking noises of medical equipment, and the final flatline monitor sound work together with the trembling text and buttons to create tension, nervousness, and give goosebumps to the audience. The audiovisual interaction makes the experience feel immersive and emotionally uncomfortable, almost like being trapped inside a failing medical system.
+                This design inspired my own p5.js practice by showing me how small interactive details can strongly influence emotional atmosphere. It made me think more carefully about how animation effects such as shaking text, glitch movement, timed audio, and unstable interfaces could be used in my own space-themed website to create feelings of uncertainty, isolation, and tension.
+            </div>
+        </div>
+
+        <div class="week4_content">
+            <p> p5.js Experiment 1 </p>
+            <img src="week4trial.GIF" alt="p5.js experiment 1">
+            <span class="view-tip">View reflection</span>
+            <div class="full-desc">
+                To play around with, p5.js I created a homepage here. Each text element uses a unique animated style: some are arranged vertically, some in a circular formation, some horizontally, and others with a bouncing/jumping motion. Every labeled item is clickable and links to its corresponding external HTML page (e.g., clicking Week 1 opens the Week 1 page).
+I also added floating non-clickable decorative words that continuously drift across the screen as background elements — they move freely but have no interaction function.
+For mouse interaction, I programmed the canvas to draw tiny white squares that follow the user’s mouse cursor in real time, with a slow fade-out effect so the trail gradually disappears over time.
+            </div>
+        </div>
+
+        <div class="week4_content">
+            <p> p5.js Webcam Experiment </p>
+            <img src="webcamCode.png" alt="webcam">
+            <img src="webcam.png" alt="webcam">
+            <span class="view-tip">View reflection</span>
+            <div class="full-desc">
+               In this experiment, I used p5.js to build a low-pixel black-and-white webcam page. I converted real-time camera footage into retro blocky monochrome visuals. I thought the low-pixel will work well with the black-and-white filter, however it looked a bit creepy by the end. XD 
+            </div>
+        </div>
+
+    </div>
+
+    <div style="text-align: center; margin: 60px 0;">
+        <button id="applauseBtn" style="padding: 20px 40px; font-size: 24px; font-weight: 900; color: rgb(195, 255, 186); background: rgba(230, 9, 250, 0.2); border: 2px solid rgb(230, 9, 250); border-radius: 12px; cursor: pointer;">
+            IT ONLY HAS TO WORK ONCE MURPH.
+        </button>
+    </div>
+
+    <audio id="applauseSound" preload="auto">
+        <source src="itonlyhastoworkoncde.mp4" type="audio/mpeg">
+    </audio>
+
+    <div id="modal" class="image-modal">
+        <div class="modal-content">
+            <img id="modalImg" src="">
+            <div id="modalDesc"></div>
+        </div>
+    </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const applauseBtn = document.getElementById('applauseBtn');
+  const applauseSound = document.getElementById('applauseSound');
+  if (applauseBtn && applauseSound) {
+    applauseBtn.addEventListener('click', function() {
+      applauseSound.currentTime = 0;
+      applauseSound.play().catch(error => {
+        console.log("Sound play error (usually browser autoplay restriction):", error);
+      });
+    });
+  }
+});
+</script>
+<script src="week4.js"></script>
+</body>
+</html>
