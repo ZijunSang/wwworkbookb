@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>week 2</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="week2.css">
+</head>
+<body>
+    <div class="button-container">
+        <button class="btn back-button" onclick="history.back()">
+            <i class="fas fa-arrow-left"></i> Back
+        </button>
+        <button class="btn week2-button" onclick="window.location.href='week3.html'">
+            Explore Week 3 Exercises
+        </button>
+    </div>
+    <header>
+        <h1>WEEK 2</h1>
+        <h2><span class="highlight">------! DOCTYPE html-------</span></h2>
+    </header>
+<div class="week2_container">
+
+  <div class="week2_content">
+    <p> LOW-FIDELITY PROTOTYPING </p>
+    <img src="IMG_0157.HEIC" alt="interface design activity">
+    <p2> A mock-up of hovering effects and flip cards </p2>
+  </div>
+
+  <div class="week2_content">
+    <p> CODING ACTIVITY </p>
+    <img src="codingactivity.png" alt="Coding Activity">
+    <p2> We created a working HTML file using separate tags XD!!! </p2>
+  </div>
+
+  <div class="week2_content">
+    <p> CSS CHEAT SHEET </p>
+    <img src="csscheatsheet.png" alt="CSS Cheat Sheet">
+    <p2> A quick reference guide for CSS properties and selectors; </p2>
+    <a href="https://web.stanford.edu/group/csp/cs21/csscheatsheet.pdf" target="_blank">Go Visit</a>
+  </div>
+
+   <div class="week2_content">
+    <p> CASE STUDY </p>
+    <img src="catcasestudy.GIF" alt="Case Study">
+    <p2>This is a cat‑themed interactive website with a design theme of personal virtual work companion. It provides soft, calming background music and cute cat sound effects.Users can click an on‑screen keyboard to trigger animations of the cat typing on a computer. The design is lightweight and non‑distracting, supporting productivity rather than interrupting focus. </p2>
+    <a href="https://hostrider.com" target="_blank">Go Visit https://hostrider.com</a>
+  </div>
+</div>
+</div>
+<div style="text-align: center; margin: 60px 0;">
+  <button id="applauseBtn" style="padding: 20px 40px; font-size: 24px; font-weight: 900; color: rgb(195, 255, 186); background: rgba(230, 9, 250, 0.2); border: 2px solid rgb(230, 9, 250); border-radius: 12px; cursor: pointer;">
+    READY FOR ANOTHER ROUND OF APPLAUSE? CLICK ME!
+  </button>
+</div>
+<audio id="applauseSound" preload="auto">
+  <source src="aroundofapplause.mp3" type="audio/mpeg">
+</audio>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const applauseBtn = document.getElementById('applauseBtn');
+  const applauseSound = document.getElementById('applauseSound');
+  if (applauseBtn && applauseSound) {
+    applauseBtn.addEventListener('click', function() {
+      applauseSound.currentTime = 0; //
+      applauseSound.play().catch(error => {
+        console.log("Sound play error (usually browser autoplay restriction):", error);
+      });
+    });
+  }
+});
+</script>
+</body>
+</html>

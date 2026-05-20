@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>week 1</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="week1.css">
+</head>
+<body>
+    <div class="button-container">
+        <button class="btn back-button" onclick="history.back()">
+            <i class="fas fa-arrow-left"></i> Back
+        </button>
+        <button class="btn week2-button" onclick="window.location.href='week2.html'">
+            Explore Week 2 Exercises
+        </button>
+    </div>
+    <header>
+        <h1>WEEK 1</h1>
+        <h2><span class="highlight">------INTRODUCTION TO INTERACTIVE MEDIA-------</span></h2>
+    </header>
+<div class="week1_container">
+
+  <div class="week1_content">
+    <p> INTERFACE DESIGN ACTIVITY </p>
+    <img src="Workshop 1.jpg" alt="interface design activity">
+  </div>
+
+  <div class="week1_content">
+    <p> HELLO WORLD! </p>
+    <img src="IMG_0362.GIF" alt="Hello World">
+  </div>
+
+  <div class="week1_content">
+    <p> CRAZY 8s </p>
+    <img src="crazy8s.heic" alt="Crazy 8s">
+  </div>
+
+  <div class="week1_content">
+    <p> 12-HOUR CHALLENGE </p>
+    <img src="12hourchallenge.heic" alt="12 Hour Challenge">
+  </div>
+</div>
+</div>
+<div style="text-align: center; margin: 60px 0;">
+  <button id="applauseBtn" style="padding: 20px 40px; font-size: 24px; font-weight: 900; color: rgb(195, 255, 186); background: rgba(230, 9, 250, 0.2); border: 2px solid rgb(230, 9, 250); border-radius: 12px; cursor: pointer;">
+    READY FOR A ROUND OF APPLAUSE? CLICK ME!
+  </button>
+</div>
+<audio id="applauseSound" preload="auto">
+  <source src="aroundofapplause.mp3" type="audio/mpeg">
+</audio>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const applauseBtn = document.getElementById('applauseBtn');
+  const applauseSound = document.getElementById('applauseSound');
+  if (applauseBtn && applauseSound) {
+    applauseBtn.addEventListener('click', function() {
+      applauseSound.currentTime = 0; //
+      applauseSound.play().catch(error => {
+        console.log("Sound play error (usually browser autoplay restriction):", error);
+      });
+    });
+  }
+});
+</script>
+</body>
+</html>
