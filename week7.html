@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>week 7</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="week7.css">
+    <style>
+    .circle-trail {
+     position: fixed;
+     pointer-events: none;
+     z-index: 99999;
+     transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+  </style>
+</head>
+
+<body>
+    <div class="fixed-buttons">
+       <button class="pixel-btn left-btn" onclick="history.back()">
+        GO BACK
+       </button>
+       <button class="pixel-btn right-btn" onclick="window.location.href='week8.html'">
+        EXPLORE WEEK 8
+       </button>
+    </div>
+
+    <header>
+        <h1>WEEK 7</h1>
+        <h2><span class="highlight">------MORE PHYSICAL COMPUTING-------</span></h2>
+    </header>
+
+    <div class="week7_container">
+
+        <div class="week7_content">
+            <p> INTRO TO BREADBOARD </p>
+            <img src="week7breadboard.HEIC" alt="breadboard">
+            <span class="view-tip">View reflection</span>
+            <div class="full-desc">
+                + (red rail) is POSITIVE - (black rail) is NEGATIVE or GROUND
+                We always need a closed circuit with both a ground and a positive connection for electricity to flow.</div>
+        </div>
+
+        <div class="week7_content">
+            <p> OBSTACLE-AVOIDANCE DEVICE </p>
+            <video autoplay muted loop playsinline width="100%">
+                <source src="week7Arduino.mp4" type="video/mp4">
+            </video>
+            <span class="view-tip">View reflection</span>
+            <div class="full-desc">
+                This week we used Arduino to build an obstacle-avoidance device. The sensor would make a beeping sound when it detected an object approaching. I found the process very interesting because we not only learned the basic connections of Arduino, but also gained a deeper understanding of how sensors interact with the real world.</div>
+        </div>
+        <div class="week7_content">
+            <p> 67 </p>
+            <img src="week767.GIF" alt="six seven">
+            <span class="view-tip">View reflection</span>
+            <div class="full-desc">
+               67 drill survivors club meeting starts NOW hahahhahaha</div>
+        </div>
+
+    </div>
+
+    <div style="text-align: center; margin: 60px 0;">
+        <button id="applauseBtn" style="padding: 20px 40px; font-size: 24px; font-weight: 900; color: rgb(195, 255, 186); background: rgba(230, 9, 250, 0.2); border: 2px solid rgb(230, 9, 250); border-radius: 12px; cursor: pointer;">
+            📢 %^&@$*^$*&(&@#)... 📢
+        </button>
+    </div>
+
+    <audio id="applauseSound" preload="auto">
+        <source src="week7robottalk.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="modal" class="image-modal">
+      <div class="modal-content">
+          <img id="modalImg" src="" style="display:none">
+          <video id="modalVideo" controls style="display:none; max-width:100%; max-height:70vh; border-radius:8px;">
+          <source id="modalVideoSrc" src="" type="video/mp4">
+          </video>
+      <div id="modalDesc"></div>
+     </div>
+    </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const applauseBtn = document.getElementById('applauseBtn');
+  const applauseSound = document.getElementById('applauseSound');
+  if (applauseBtn && applauseSound) {
+    applauseBtn.addEventListener('click', function() {
+      applauseSound.currentTime = 0;
+      applauseSound.play().catch(error => {
+        console.log("Sound play error (usually browser autoplay restriction):", error);
+      });
+    });
+  }
+});
+</script>
+<script src="week7.js"></script>
+</body>
+</html>
