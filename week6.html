@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>week 6</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="week6.css">
+    <style>
+    .circle-trail {
+     position: fixed;
+     pointer-events: none;
+     z-index: 99999;
+     transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+  </style>
+</head>
+
+<body>
+    <div class="fixed-buttons">
+       <button class="pixel-btn left-btn" onclick="history.back()">
+        GO BACK
+       </button>
+       <button class="pixel-btn right-btn" onclick="window.location.href='week7.html'">
+        EXPLORE WEEK 7
+       </button>
+    </div>
+
+    <header>
+        <h1>WEEK 6</h1>
+        <h2><span class="highlight">------PHYSICAL COMPUTING-------</span></h2>
+    </header>
+
+    <div class="week6_container">
+
+        <div class="week6_content">
+            <p> WORKBOOK B PLANNING </p>
+            <img src="week6workbookplan.heic" alt="workbook planning">
+            <span class="view-tip">View reflection</span>
+            <div class="full-desc">
+                FEEDBACKS/NOTES/TIPS + DIAGRAM </div>
+        </div>
+
+        <div class="week6_content">
+            <p> INTRO TO ARDUINO </p>
+            <img src="week6arduinointo.HEIC" alt="intro to Arduino">
+            <span class="view-tip">View reflection</span>
+            <div class="full-desc">
+                I have to say that I know nothings about these except some wires, LEDs, ummm that's all... </div>
+        </div>
+
+        <div class="week6_content">
+            <p> MY FIRST LED WAS LIGHTED UP! </p>
+            <video autoplay muted loop playsinline width="100%">
+                <source src="week6leds.mp4" type="video/mp4">
+            </video>
+            <span class="view-tip">View reflection</span>
+            <div class="full-desc">
+               and then we lighted up TWO!!! INCREADIBLE~~~</div>
+        </div>
+
+        <div class="week6_content">
+            <p> RESEARCH JOURNAL </p>
+            <video autoplay muted loop playsinline width="100%">
+                <source src="week6research.mp4" type="video/mp4">
+            </video>
+            <span class="view-tip">View reflection</span>
+            <div class="full-desc">
+               This is a work I found online by an interactive art student called Joyce. The project was a “plant watering simulator,” where water acted as the input detected by an Arduino sensor, and the data then generated dynamic visual patterns in Processing. This was the first time I had seen an Arduino installation produce something beyond simple LEDs lighting up or buzzers making sound, but transforming an ordinary physical action into a digital response. The visuals were not simply decorative outputs, they felt alive and directly connected to the participant’s behaviour.</div>
+        </div>
+
+    </div>
+
+    <div style="text-align: center; margin: 60px 0;">
+        <button id="applauseBtn" style="padding: 20px 40px; font-size: 24px; font-weight: 900; color: rgb(195, 255, 186); background: rgba(230, 9, 250, 0.2); border: 2px solid rgb(230, 9, 250); border-radius: 12px; cursor: pointer;">
+            📢 ****$$$$####@@@!^^^ 📢
+        </button>
+    </div>
+
+    <audio id="applauseSound" preload="auto">
+        <source src="week6sound.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="modal" class="image-modal">
+  <div class="modal-content">
+    <img id="modalImg" src="" style="display:none">
+    <video id="modalVideo" controls style="display:none; max-width:100%; max-height:70vh; border-radius:8px;">
+      <source id="modalVideoSrc" src="" type="video/mp4">
+    </video>
+    <div id="modalDesc"></div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const applauseBtn = document.getElementById('applauseBtn');
+  const applauseSound = document.getElementById('applauseSound');
+  if (applauseBtn && applauseSound) {
+    applauseBtn.addEventListener('click', function() {
+      applauseSound.currentTime = 0;
+      applauseSound.play().catch(error => {
+        console.log("Sound play error (usually browser autoplay restriction):", error);
+      });
+    });
+  }
+});
+</script>
+<script src="week6.js"></script>
+</body>
+</html>
