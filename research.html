@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>research</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="research.css">
+</head>
+<body>
+     <div class="button-container">
+        <button class="btn back-button" onclick="history.back()">
+            <i class="fas fa-arrow-left"></i> Back
+        </button>
+        <button class="btn week2-button" onclick="window.location.href='outro.html'">
+            Outro
+        </button>
+    </div>
+    <header>
+        <h1>RESEARCH</h1>
+        <h2><span class="highlight">------ ! INSPIRATION & FINDINGS ! ------</span></h2>
+    </header>
+    </div>
+   <div style="text-align: center; margin: 60px 0;">
+    <button id="chillmusicBtn" style="padding: 20px 40px; font-size: 24px; font-weight: 900; color: rgb(195, 255, 186); background: rgba(230, 9, 250, 0.2); border: 2px solid rgb(230, 9, 250); border-radius: 12px; cursor: pointer;">
+    🎵 Cornfield Chase • Hans Zimmer ✨
+    </button>
+   </div>
+   <audio id="chillmusic" preload="auto">
+    <source src="Cornfield Chase • Hans Zimmer.mp3" type="audio/mpeg">
+   </audio>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const chillmusicBtn = document.getElementById('chillmusicBtn');
+  const chillmusicSound = document.getElementById('chillmusic');
+  if (chillmusicBtn && chillmusicSound) {
+    chillmusicBtn.addEventListener('click', function() {
+      chillmusicSound.currentTime = 0; //
+      chillmusicSound.play().catch(error => {
+        console.log("Sound play error (usually browser autoplay restriction):", error);
+      });
+    });
+  }
+});
+</script>
+    <div class="research_container">
+      <div class="research_content">
+      <p> ---🤖 Paper Menu Design 🤖--- Viocu Apostol </p>
+      <img src="paperdesign.GIF" alt="paper design">
+      <p2> Viocu Apostol’s paper menu design reminds me to think outside traditional interactive design. It shows interaction goes beyond screens, inspiring me to combine digital and physical experiences. </p2>
+      <p3> <a href="https://www.cerpow.com/24067227--Paper-Menu" target="_blank">Click to Visit site!</a> </p3>
+    </div>
+    <div class="research_content">
+      <p>---🕵️‍♀️ Interactive Design 🕵️‍♀️--- Jackie Zhang </p>
+      <img src="jackie.GIF" alt="jackiezhang interactive design">
+      <p2> This is a South African designer’s portfolio styled as a notebook. Artworks spill out from the pages with sticky note labels, making its unconventional design highly interactive. </p2>
+      <p3> <a href="https://www.jackiezhang.co.za/" target="_blank">Click to Visit site!</a> </p3>
+    </div>
+    <div class="research_content">
+      <p>-----👽 itsnotviolent.com 👽----- SOS Violence Conjugale </p>
+      <img src="itsnotviolent.GIF" alt="itsnotviolent interactive design">
+      <p2> This is a website for a Canadian organization that helps domestic violence victims. It uses interactive elements to educate users about abuse, making the experience more engaging and impactful. </p2>
+      <p3> <a href="https://itsnotviolent.com/animation-guide" target="_blank">Click to Visit site!</a> </p3>
+    </div>
+    <div class="research_content">
+      <p>---🌟 Monolith Project 🌟--- Nando Correa </p>
+      <img src="monolith.GIF" alt="monolith project">
+      <p2> The Monolith Project, inspired by 2001: A Space Odyssey, offers an immersive cosmic journey through scroll-based interactive art. It perfectly aligns with my theme of the universe and consciousness, turning abstract ideas of awakening into an engaging experience. This work made me realize how breaking cognitive boundaries relates to self-awakening and how immersive visuals strengthen grand philosophical ideas. </p2>
+      <p3> <a href="https://themonolithproject.net" target="_blank">Click to Visit site!</a> </p3>
+    </div>
+    <div class="research_content">
+      <p>--👾 WebDesign Heuristics 👾-- Jakob Nielsen</p>
+      <img src="nielson.jpg" alt="nielson">
+      <p2> Jakob Nielsen is a renowned usability expert who has contributed significantly to web design principles, which helped me understand the importance of usability heuristics. </p2>
+        <p3> <a href="https://www.nngroup.com/articles/ten-usability-heuristics/" target="_blank">Click to Visit site!</a> </p3>
+    </div>
+     <div class="research_content">
+      <p>---🌟 Machine Hallucinations 🌟--- Refik Anadol </p>
+      <img src="research_machine.jpg" alt="Machine Hallucinations">
+      <p2> Refik Anadol is a media artist whose work explores AI, machine learning, memory, and immersive digital environments. His project Nature Dreams uses over 300 million nature photographs and GAN technology to create dreamlike AI-generated landscapes that feel realistic but do not exist in reality. The work made me reflect on how AI systems, similar to ChatGPT, can learn from massive datasets and develop their own visual language and creative logic. The immersive visuals and atmospheric sounds created a strong emotional tension between calmness and the powerful energy of nature. Inspired by Anadol’s practice, my final project also explores generative motion, sensory interaction, and the visualisation of invisible systems through digital aesthetics. </p2>
+      <p3> <a href="https://refikanadol.com/works/machine-hallucinations-nature-dreams/" target="_blank">Click to Visit site!</a> </p3>
+    </div>
+     <div class="research_content">
+      <p>---🌟 77 Million Paintings 🌟--- Brian Eno </p>
+      <img src="research_Brian.jpeg" alt="77 million paintings">
+      <p2> Brian Eno is a musician and visual artist known for developing Generative Art through systems that combine sound, image, and algorithms. His work 77 Million Paintings uses 296 painted slides and programmed algorithms to create constantly changing audiovisual compositions that never repeat in the same way. The project explores ideas of randomness, transformation, time, and immersive experience, and was even used in hospitals to help reduce patient anxiety through calming sensory environments. Inspired by this work, I used real-time heartbeat data in my Arduino installation to generate unique visual and earthquake-like effects that continuously change based on live human signals. </p2>
+      <p3> <a href="https://www.irishtimes.com/culture/art-and-design/visual-art/art-in-focus-brian-eno-77-million-paintings-1.3758613" target="_blank">Click to Visit site!</a> </p3>
+    </div>
+     <div class="research_content">
+      <p>-------🌟 Data-Verse 🌟------- Ryoji Ikeda </p>
+      <img src="research_dataVerse.png" alt="data-verse">
+      <p2> Ryoji Ikeda is an electronic composer and visual artist whose work transforms invisible data, mathematical systems, and sound into immersive audiovisual experiences. His installation data-verse particularly inspired my workbook design through its use of projection mapping, monochrome visuals, sound frequencies, and algorithmic sequencing to create the feeling of travelling through a digital universe. Inspired by Ikeda’s approach, my own projects explore how hidden systems such as planetary structures and heartbeat data can be transformed into immersive visual, physical, and sensory interactions.</p2>
+      <p3> <a href="https://www.ryojiikeda.com/project/x_verse/" target="_blank">Click to Visit site!</a> </p3>
+    </div>
+     <div class="research_content">
+      <p>----🌟   Reactive Books   🌟---- John Maeda </p>
+      <img src="reasearch_reactiveBooks.jpg" alt="reactive books">
+      <p2> John Maeda is a designer and computer scientist known for exploring the relationship between computation, interaction, and traditional books through projects like Reactive Books. His experimental approach to interaction design inspired my workbook and p5.js coding experiments, helping me realise that websites can contain emotional, playful, and unexpected behaviours beyond simple clicking or hovering. After studying his work, I became more confident in experimenting with creative coding, interactive animations, cursor effects, and immersive digital interactions instead of limiting my ideas because of technical difficulty. </p2>
+      <p3> <a href="http://inventinginteractive.com/2010/07/08/reactive-books/" target="_blank">Click to Visit site!</a> </p3>
+    </div>
+    </div>
+   </div>
+</body>
+</html>
