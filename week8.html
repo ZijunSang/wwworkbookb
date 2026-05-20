@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>week 8</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="week8.css">
+    <style>
+    .circle-trail {
+     position: fixed;
+     pointer-events: none;
+     z-index: 99999;
+     transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+  </style>
+</head>
+
+<body>
+    <div class="fixed-buttons">
+       <button class="pixel-btn left-btn" onclick="history.back()">
+        GO BACK
+       </button>
+       <button class="pixel-btn right-btn" onclick="window.location.href='hacker.html'">
+        EXPLORE WEEK 9
+       </button>
+    </div>
+
+    <header>
+        <h1>WEEK 8</h1>
+        <h2><span class="highlight">------INPUTS & OUTPUTS-------</span></h2>
+    </header>
+
+    <div class="week8_container">
+
+        <div class="week8_content">
+            <p> INPUTS & OUTPUTS ACTIVITY </p>
+            <img src="input&outputactivity.jpg" alt="inputs and outputs activity">
+            <span class="view-tip">View reflection</span>
+            <div class="full-desc">
+             During this week’s class, we began by filling grids with different inputs and outputs, then experimenting with unusual combinations. However, I felt somewhat constrained by our original ideas for the final project, which mostly revolved around familiar elements such as screens, receipt printers, and lights. Although we created many combinations, they felt somewhat meaningless to me — almost like empty skeletons without any veins or flesh to bring them to life. I struggled to imagine how these technical combinations could develop into a meaningful interactive experience. After class, I explored John’s design library and researched various art exhibitions, where I discovered many inspiring ideas and interactive works. These references helped me rethink the possibilities of interaction design and gave me a much clearer sense of direction for future development. See more in the next section!
+            </div>
+        </div>
+
+        <div class="week8_content">
+            <p> FRUIT INSTRUMENT </p>
+            <video autoplay muted loop playsinline width="100%">
+                <source src="fruit instrument.mp4" type="video/mp4">
+            </video>
+            <span class="view-tip">View reflection</span>
+            <div class="full-desc">
+                We made a fruit piano!!! COME AND PLAY WITH IT!!XD
+            </div>
+        </div>
+
+        <div class="week8_content">
+            <p> RESEARCH JOURNAL </p>
+            <img src="week8researchJournal.png" alt="week 8 research Journal">
+            <span class="view-tip">View reflection</span>
+            <div class="full-desc">
+               The Weather Project, created by Olafur Eliasson for the Turbine Hall of Tate Modern in 2003, transformed the industrial exhibition space into an artificial climate environment. Using mono-frequency lamps, mirrors, and mist, Eliasson created a glowing artificial “sun” that blurred the boundary between reality and illusion. After learning about The Weather Project, I began asking myself: why am I making this installation? I started reflecting on the world around me — ongoing wars, the loss of loved ones, and the common Chinese belief in fate. My parents often say, “This is fate. We are born with it, and we cannot change it.” Nah, I do not believe that human beings are powerless. Ta-da! The idea popped up in my head that I wanted to visualise the invisible power within every human body: the HEATBEAT.</div>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin: 60px 0;">
+        <button id="applauseBtn" style="padding: 20px 40px; font-size: 24px; font-weight: 900; color: rgb(195, 255, 186); background: rgba(230, 9, 250, 0.2); border: 2px solid rgb(230, 9, 250); border-radius: 12px; cursor: pointer;">
+            📢 YOU WERE MY GHOST 📢
+        </button>
+    </div>
+
+    <audio id="applauseSound" preload="auto">
+        <source src="youaremyghost.mp4" type="audio/mpeg">
+    </audio>
+
+    <div id="modal" class="image-modal">
+      <div class="modal-content">
+      <img id="modalImg" src="" style="display:none">
+      <video id="modalVideo" controls style="display:none; max-width:100%; max-height:70vh; border-radius:8px;">
+      <source id="modalVideoSrc" src="" type="video/mp4">
+      </video>
+      <div id="modalDesc"></div>
+     </div>
+    </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const applauseBtn = document.getElementById('applauseBtn');
+  const applauseSound = document.getElementById('applauseSound');
+  if (applauseBtn && applauseSound) {
+    applauseBtn.addEventListener('click', function() {
+      applauseSound.currentTime = 0;
+      applauseSound.play().catch(error => {
+        console.log("Sound play error (usually browser autoplay restriction):", error);
+      });
+    });
+  }
+});
+</script>
+<script src="week8.js"></script>
+</body>
+</html>
