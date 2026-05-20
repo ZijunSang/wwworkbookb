@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hacking continued</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      background: #000;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: "Press Start 2P", monospace;
+      color: #95bcf6;
+      text-align: center;
+      padding: 20px;
+      gap: 40px;
+      overflow: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      pointer-events: none;
+      background: repeating-linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.03),
+        rgba(255, 255, 255, 0.03) 1px,
+        transparent 1px,
+        transparent 3px
+      );
+      animation: flicker 0.15s infinite;
+    }
+
+    @keyframes flicker {
+      0%   { opacity: 0.2; }
+      50%  { opacity: 0.08; }
+      100% { opacity: 0.2; }
+    }
+
+    header {
+      font-size: clamp(20px, 6vw, 60px);
+      line-height: 1.6;
+      max-width: 1000px;
+      animation:
+        shake 3s infinite,
+        glow 1s infinite alternate;
+    }
+
+    @keyframes shake {
+      0%,  90% { transform: translateX(0); }
+      91%      { transform: translateX(-3px); }
+      92%      { transform: translateX( 3px); }
+      93%      { transform: translateX(-3px); }
+      94%      { transform: translateX( 3px); }
+      95%, 100%{ transform: translateX(0); }
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ff00ff, 0 0 20px #7b00ff; }
+      to   { text-shadow: 0 0 20px #ff66ff, 0 0 40px #ae00ff; }
+    }
+
+    .terminal-text {
+      color: #ff4df0;
+      font-size: clamp(10px, 1.6vw, 18px);
+      line-height: 2;
+      max-width: 900px;
+      text-shadow: 0 0 10px #ff00ff;
+      animation: textGlitch 0.3s infinite alternate;
+    }
+
+    @keyframes textGlitch {
+      from { transform: translateX(-1px); }
+      to   { transform: translateX( 1px); }
+    }
+
+    button {
+      background: #b650b0;
+      color: #000;
+      border: none;
+      padding: 20px 40px;
+      font-family: "Press Start 2P", monospace;
+      font-size: clamp(12px, 2vw, 18px);
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background 0.2s, transform 0.2s;
+      animation: buttonFlash 1s infinite alternate;
+    }
+
+    @keyframes buttonFlash {
+      from { box-shadow: 0 0 12px #ff00ff; }
+      to   { box-shadow: 0 0 30px #6f00ff; }
+    }
+
+    button:hover {
+      transform: scale(1.08);
+      background: #6666ff;
+    }
+
+    #clickOverlay {
+      position: fixed;
+      inset: 0;
+      z-index: 999999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.75);
+      cursor: pointer;
+    }
+
+    #clickOverlay p {
+      pointer-events: none;
+      font-family: "Press Start 2P", monospace;
+      color: #ff4df0;
+      font-size: clamp(10px, 2vw, 18px);
+      text-shadow: 0 0 10px #ff00ff;
+      text-align: center;
+      line-height: 2;
+      animation: textGlitch 0.3s infinite alternate;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="clickOverlay">
+    <p>[ CLICK ANYWHERE TO ENTER ]</p>
+  </div>
+
+  <header>
+    BRUH, YOU LITERALLY picked THE SILliest CHOICE EVER. 💀
+  </header>
+
+  <div class="terminal-text">
+    ERROR // USER_DECISION_INVALID
+    <br>
+    NO SeCOND CHAnce 💀 NO sEcoND OPtion ANYMORE💀
+    <br><br>
+    RANSOM x2 ACTIVATED.
+  </div>
+
+  <button onclick="location.href='week9.html'">
+    PAY THE MONEY NOW!!!
+  </button>
+
+  <audio id="warnSound" autoplay loop>
+    <source src="week9laugh.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const audio   = document.getElementById('warnSound');
+    const overlay = document.getElementById('clickOverlay');
+
+    audio.volume = 0.5;
+
+    function dismissOverlay() {
+      audio.play();
+      overlay.style.display = 'none';
+    }
+
+    audio.play().then(() => {
+      overlay.style.display = 'none';
+    }).catch(() => {
+      overlay.addEventListener('click', dismissOverlay);
+    });
+  </script>
+
+</body>
+</html>
