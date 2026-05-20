@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>week 9</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="week9.css">
+    <style>
+    .circle-trail {
+     position: fixed;
+     pointer-events: none;
+     z-index: 99999;
+     transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+  </style>
+</head>
+
+<body>
+    <div class="fixed-buttons">
+       <button class="pixel-btn left-btn" onclick="history.back()">
+        GO BACK
+       </button>
+       <button class="pixel-btn right-btn" onclick="window.location.href='research.html'">
+        EXPLORE RESEARCH
+       </button>
+    </div>
+
+    <header>
+        <h1>WEEK 9</h1>
+        <h2><span class="highlight">------PITCH & PLAN-------</span></h2>
+    </header>
+
+    <div class="week9_container">
+
+        <div class="week9_content">
+            <p> FINAL PROJECT PITCH & PLAN </p>
+            <img src="week9Pitch.png" alt="pitch&plan">
+            <span class="view-tip">View reflection</span>
+            <div class="full-desc">
+                FINALLY! We shared our crazy ideas with the class!!</div>
+        </div>
+
+        <div class="week9_content">
+            <p> FEEDBACK & IMPROVEMENTS </p>
+            <img src="week9pitchfeedback.png" alt="pitchfeedback">
+            <span class="view-tip">View reflection</span>
+            <div class="full-desc">
+                We received plenty of valuable constructive feedback during this week’s presentation. Our original concept was deemed creative and uniquely distinctive, yet we were advised to further refine how we visually convey heartbeat variations. It was pointed out that real heartbeat fluctuations are difficult to achieve in a short period of time. Inspired by the suggestions, we came up with a practical solution: we can design visual stimuli for viewers to observe, which can effectively trigger instant changes in their heart rate, probably? We definitely need to test it! </div>
+        </div>
+
+        <div class="week9_content">
+            <p> RESEARCH JOURNAL </p>
+            <img src="week9researchJournal.webp" alt="researchjournal">
+            <span class="view-tip">View reflection</span>
+            <div class="full-desc">
+               Face Visualizer was a biosensing Electrical Stimulation Interactive device, created in 2008 by Daito Manabe and several collaborators. In this project, electrodes were attached to participants’ facesvwhile computer-generated electrical impulses controlled their facial muscles, forcing their faces to produce the same expressions and movements across multiple people simultaneously. Interestingly, Manabe’s design concept is almost the opposite of my Arduino installation. My interactive ideas usually attempt to transform physical or tangible inputs into digital or abstract outputs. Face Visualizer completely reverses this logic by converting digital data and sound into electrical signals that are presented as physical facial muscle movement. This approach challenged my previous “stereotype" of interaction and interactive media, as nothing is inherently born to be an interface or a generator — it can be the opposite, or even both at the same time.</div>
+        </div>
+
+    </div>
+
+    <div style="text-align: center; margin: 60px 0;">
+        <button id="applauseBtn" style="padding: 20px 40px; font-size: 24px; font-weight: 900; color: rgb(195, 255, 186); background: rgba(230, 9, 250, 0.2); border: 2px solid rgb(230, 9, 250); border-radius: 12px; cursor: pointer;">
+            📢 I WAS YOUR GHOST... 📢
+        </button>
+    </div>
+
+    <audio id="applauseSound" preload="auto">
+        <source src="iwasyourghost.mp4" type="audio/mpeg">
+    </audio>
+
+    <div id="modal" class="image-modal">
+        <div class="modal-content">
+            <img id="modalImg" src="">
+            <div id="modalDesc"></div>
+        </div>
+    </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const applauseBtn = document.getElementById('applauseBtn');
+  const applauseSound = document.getElementById('applauseSound');
+  if (applauseBtn && applauseSound) {
+    applauseBtn.addEventListener('click', function() {
+      applauseSound.currentTime = 0;
+      applauseSound.play().catch(error => {
+        console.log("Sound play error (usually browser autoplay restriction):", error);
+      });
+    });
+  }
+});
+</script>
+<script src="week9.js"></script>
+</body>
+</html>
